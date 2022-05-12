@@ -80,7 +80,7 @@ def make_animation(source_image, driving_video, generator, kp_detector, relative
 def make_animation2(morph_video, driving_video, generator, kp_detector,n, relative=True, adapt_movement_scale=True, cpu=False):
     with torch.no_grad():
         predictions = []
-        source_image=resize(numpy.asarray(morph_video[0]), (256, 256))
+        source_image=resize(np.asarray(morph_video[0]), (256, 256))
         source = torch.tensor(source_image[np.newaxis].astype(np.float32)).permute(0, 3, 1, 2)
         if not cpu:
             source = source.cuda()
