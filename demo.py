@@ -77,7 +77,7 @@ def make_animation(source_image, driving_video, generator, kp_detector, relative
             predictions.append(np.transpose(out['prediction'].data.cpu().numpy(), [0, 2, 3, 1])[0])
     return predictions
 
-def make_animation2(morph_video, driving_video, generator, kp_detector, relative=True, adapt_movement_scale=True, cpu=False, n):
+def make_animation2(morph_video, driving_video, generator, kp_detector,n, relative=True, adapt_movement_scale=True, cpu=False):
     with torch.no_grad():
         predictions = []
         source_image=resize(numpy.asarray(morph_video[0]), (256, 256))
