@@ -99,7 +99,7 @@ def make_animation2(morph_video, driving_video, generator, kp_detector,n, relati
             out = generator(source, kp_source=kp_source, kp_driving=kp_norm)
 
             predictions.append(np.transpose(out['prediction'].data.cpu().numpy(), [0, 2, 3, 1])[0])
-            i++
+            i+=1
             if i is n break
     return predictions
 
